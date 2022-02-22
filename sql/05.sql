@@ -9,3 +9,9 @@
  * HINT:
  * This can be solved using either a LEFT JOIN or the NOT IN operator.
  */
+SELECT a.last_name, a.first_name
+FROM actor a
+LEFT JOIN customer c
+ON a.first_name || ' ' || a.last_name = c.first_name || ' ' || c.last_name
+WHERE c.first_name is null
+ORDER BY a.last_name, a.first_name;
